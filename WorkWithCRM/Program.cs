@@ -21,11 +21,11 @@ namespace WorkWithCRM
         static IOrganizationService _orgservice;
         static void Main(string[] args)
         {
-            //CrmConnection conn = CrmConnection.Parse("Url=https://mmtrail.api.crm.dynamics.com; Username=BIPIN@MMTrail.onmicrosoft.com; Password=infosys-123;");
+            //CrmConnection conn = CrmConnection.Parse("Url=; Username=; Password=;");
             //OrganizationService _orgservice = new
             //    OrganizationService(conn);
 
-            ConnectToMSCRM("bipin.kumar@movement.com", "August@7702943098", "https://mmdev.api.crm.dynamics.com/XRMServices/2011/Organization.svc");
+            ConnectToMSCRM("", "", "");
 
             if (_orgservice != null)
             {
