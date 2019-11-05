@@ -3,8 +3,8 @@
 // Author    : Jonas Rapp http://twitter.com/rappen
 // Repo      : https://github.com/rappen/LateboundConstantGenerator
 // Source Org: https://mmdev.crm.dynamics.com/
-// Filename  : C:\Users\user\Desktop\xx\ImportDetailsMapping.cs
-// Created   : 2019-11-01 18:07:24
+// Filename  : C:\Users\user\Desktop\Display Name\ImportDetailsMapping.cs
+// Created   : 2019-11-05 13:14:28
 // *********************************************************************
 
 namespace XrmExtensions
@@ -69,6 +69,7 @@ namespace XrmExtensions
         {
             Currency = 8,
             DateTime = 4,
+            Decimal = 9,
             Lookup = 5,
             MultipleLineOfText = 1,
             Optonset = 6,
@@ -90,6 +91,7 @@ namespace XrmExtensions
         {
             Currency = 8,
             DateTime = 4,
+            Decimal = 9,
             Lookup = 5,
             MultipleLineOfText = 1,
             Optonset = 6,

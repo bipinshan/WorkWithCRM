@@ -20,3 +20,6 @@ E:\CRM\Projects\WorkWithCRM\WorkWithCRM\bin\Debug\Microsoft.Xrm.Sdk.dll
 E:\CRM\Projects\WorkWithCRM\WorkWithCRM\obj\Debug\WorkWithCRM.exe
 E:\CRM\Projects\WorkWithCRM\WorkWithCRM\obj\Debug\WorkWithCRM.pdb
 E:\CRM\Projects\WorkWithCRM\WorkWithCRM\obj\Debug\WorkWithCRM.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\WorkWithCRM\WorkWithCRM\bin\Debug\WorkWithCRM.exe.config
+C:\Users\user\Source\Repos\WorkWithCRM\WorkWithCRM\obj\Debug\WorkWithCRM.exe
+C:\Users\user\Source\Repos\WorkWithCRM\WorkWithCRM\obj\Debug\WorkWithCRM.pdb

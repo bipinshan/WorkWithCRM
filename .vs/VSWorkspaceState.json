@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WorkWithCRM",
+    "\\WorkWithCRM\\LateBoundClasses"
   ],
   "PreviewInSolutionExplorer": false
 }

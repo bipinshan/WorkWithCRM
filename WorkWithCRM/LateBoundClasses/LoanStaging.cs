@@ -3,8 +3,8 @@
 // Author    : Jonas Rapp http://twitter.com/rappen
 // Repo      : https://github.com/rappen/LateboundConstantGenerator
 // Source Org: https://mmdev.crm.dynamics.com/
-// Filename  : C:\Users\user\Desktop\xx\LoanStaging.cs
-// Created   : 2019-11-01 18:07:25
+// Filename  : C:\Users\user\Desktop\Display Name\LoanStaging.cs
+// Created   : 2019-11-05 13:14:29
 // *********************************************************************
 
 namespace XrmExtensions
@@ -38,6 +38,7 @@ namespace XrmExtensions
         public const string createdbyyominame = "createdbyyominame";
         public const string createdonbehalfbyname = "createdonbehalfbyname";
         public const string createdonbehalfbyyominame = "createdonbehalfbyyominame";
+        public const string CrmLoan = "ims_crmloan";
         public const string CTCDate = "ims_ctcdate";
         public const string DocumentSignedDate = "ims_documentsigneddate";
         public const string EPODate = "ims_epodate";

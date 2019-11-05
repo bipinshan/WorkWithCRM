@@ -217,6 +217,12 @@ namespace XrmExtensions
                             entity[mapping.Target] = dt;
                         }
                     }
+                    else if (mapping.DataType == (int)ImportDetailsMapping.TargetDataType_OptionSet.Decimal)
+                    {
+                        decimal d;
+                        d = Convert.ToDecimal(mapping.value);
+                        entity[mapping.Target] = d;
+                    }
                     else if (mapping.DataType == (int)ImportDetailsMapping.TargetDataType_OptionSet.Optonset)
                     {
                         bool matchFound = false;
@@ -356,7 +362,7 @@ namespace XrmExtensions
                 {
                     try
                     {
-                        IsDirty(existingRec, objNewRec, ref recordTobBeUpdated, mapping.Target, ref updateFlag, ref dirtyFields,ref ValidationStatus,ref canReturn, ref errorMessage);
+                        IsDirty(existingRec, objNewRec, ref recordTobBeUpdated, mapping.Target, ref updateFlag, ref dirtyFields, ref ValidationStatus, ref canReturn, ref errorMessage);
                         if (updateFlag != (int)Constants.NewRecord.ValueIsNull)
                         {
                             if (mapping.DataType == (int)ImportDetailsMapping.TargetDataType_OptionSet.SingleLineOfText ||
@@ -375,6 +381,15 @@ namespace XrmExtensions
                                     !existingRec.GetAttributeValue<DateTime>(mapping.Target).ToShortDateString().Equals(objNewRec.GetAttributeValue<DateTime>(mapping.Target).ToShortDateString())))
                                 {
                                     recordTobBeUpdated[mapping.Target] = objNewRec.GetAttributeValue<DateTime>(mapping.Target);
+                                    dirtyFields++;
+                                }
+                            }
+                            else if (mapping.DataType == (int)ImportDetailsMapping.TargetDataType_OptionSet.Decimal)
+                            {
+                                if (updateFlag == (int)Constants.NewRecord.ValueIsNotNull || (updateFlag == (int)Constants.NewRecord.ValueIsDiffFromOldValue &&
+                                    !existingRec.GetAttributeValue<decimal>(mapping.Target).ToString().Equals(objNewRec.GetAttributeValue<decimal>(mapping.Target).ToString())))
+                                {
+                                    recordTobBeUpdated[mapping.Target] = objNewRec.GetAttributeValue<decimal>(mapping.Target);
                                     dirtyFields++;
                                 }
                             }
@@ -464,17 +479,19 @@ namespace XrmExtensions
                     if (staginEntityName == LeadStaging.EntityName)
                         objStaging[LeadStaging.Lead] = new EntityReference(Lead.EntityName, targetEntityId);
                     else if (staginEntityName == LoanStaging.EntityName)
-                        objStaging[LoanStaging.LoanAmount] = new EntityReference(Loan.EntityName, targetEntityId);
+                        objStaging[LoanStaging.CrmLoan] = new EntityReference(Loan.EntityName, targetEntityId);
                 }
                 service.Update(objStaging);
             }
             catch (InvalidOperationException ex)
             {
+                validationMessage += ex.Message;
                 CreateLog(stagingId.ToString(), validationMessage, service);
             }
             catch (Exception e)
             {
-                CreateLog(stagingId.ToString(),validationMessage,service);
+                validationMessage += e.Message;
+                CreateLog(stagingId.ToString(), validationMessage, service);
             }
         }
 
